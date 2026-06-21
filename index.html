@@ -1,0 +1,115 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1rem 0;font-size:13px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1rem;align-items:center}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary)}
+.legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.tbl-wrap{overflow-x:auto;border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-secondary)}
+table{width:100%;border-collapse:collapse;min-width:700px}
+th{background:var(--color-background-tertiary);color:var(--color-text-secondary);font-size:11px;font-weight:500;padding:8px 10px;text-align:left;border-bottom:0.5px solid var(--color-border-secondary);white-space:nowrap}
+td{padding:8px 10px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top;line-height:1.5}
+tr:last-child td{border-bottom:none}
+.d1{background:rgba(230,241,251,0.45)}
+.d2{background:rgba(225,245,238,0.45)}
+.d3{background:rgba(250,238,218,0.45)}
+.d4{background:rgba(251,234,240,0.45)}
+.day-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;white-space:nowrap}
+.b1{background:#B5D4F4;color:#0C447C}
+.b2{background:#9FE1CB;color:#085041}
+.b3{background:#FAC775;color:#633806}
+.b4{background:#F4C0D1;color:#72243E}
+.time{color:var(--color-text-secondary);font-size:12px;white-space:nowrap}
+.loc{color:var(--color-text-info);font-size:12px}
+.wait-yes{color:#A32D2D;font-size:12px}
+.wait-no{color:var(--color-text-tertiary);font-size:12px}
+.cost{font-weight:500;font-size:12px}
+.sch{font-weight:500;font-size:13px;color:var(--color-text-primary)}
+.detail{color:var(--color-text-secondary);font-size:12px;margin-top:2px}
+.care{color:var(--color-text-secondary);font-size:12px}
+@media(max-width:600px){
+  th,td{padding:6px 7px}
+  .sch{font-size:12px}
+}
+</style>
+<div class="wrap">
+  <h2 class="sr-only">삿포로 4일 여행 일정표</h2>
+  <div class="legend">
+    <span style="font-size:12px;font-weight:500;color:var(--color-text-secondary)">날짜 구분</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#B5D4F4"></span>1일차 6/25 목</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#9FE1CB"></span>2일차 6/26 금</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#FAC775"></span>3일차 6/27 토</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#F4C0D1"></span>4일차 6/28 일</span>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>날짜</th><th>시간</th><th>일정</th><th>장소 / 맛집</th><th>이동 루트</th><th>웨이팅 / 예약</th><th>예상 비용 &amp; 부모님 케어</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+<script>
+const rows=[
+  [1,"08:20~11:00","인천 출발 / 공항 도착","인천공항 → 신치토세 공항","비행기 탑승 및 입국 수속","-","인당 약 450,000원 / 부모님 여권 및 기내 액체류 사전 점검"],
+  [1,"11:00~12:09","입국 수속 및 대기","신치토세 공항","국내선 터미널 이동 및 JR 인포메이션 데스크 이동","-","JR 쾌속 에어포트 지정석(U시트) 미리 실물 티켓으로 발권하면 편리"],
+  [1,"12:09~12:46","삿포로역 이동","JR 쾌속 에어포트","신치토세공항역 지하1층 탑승 → 환승 없이 37분 → JR 삿포로역 하차","지정석(U시트) 사전 예매 필수","인당 1,990엔 / 부모님이 서서 가지 않도록 100% 좌석 보증"],
+  [1,"12:50~13:00","숙소 이동 및 짐 보관","호텔 포르자 삿포로 스테이션","JR 삿포로역 남구에서 도보 4분 또는 지하 연결통로","-","이동거리 최소화 / 체크인 전 캐리어를 리셉션에 맡기고 출발"],
+  [1,"13:10~14:30","늦은 점심 (돈카츠)","돈카츠 타마후지 (삿포로역점)","호텔에서 에스타 빌딩 방향 도보 4분","웨이팅 약 25분 / 예약 불가","인당 약 2,000~2,500엔 / 흑돼지 돈카츠·솥밥. 대기 시 역내 의자 휴식 유도"],
+  [1,"14:30~15:30","지하보도 관광","삿포로 지하보도 '치카호'","삿포로역 → 오도리공원 방면 실내 지하보도 도보 이동 (약 500m)","-","눈비·바람 차단된 쾌적한 평지보도. 천천히 걷기 최적"],
+  [1,"15:30~16:30","오도리공원 & TV타워 관광","오도리공원 및 삿포로 TV타워","지하보도 오도리역 2번 출구 연결. 공원 분수대 산책 후 TV타워 엘리베이터","웨이팅 거의 없음 / 예약 가능","인당 1,000엔 (TV타워 입장료) / 엘리베이터로 무릎 무리 없이 전망대 안착"],
+  [1,"16:30~17:00","스스기노 이동","지하보도 '폴타운'","오도리공원 → 스스기노역 지하 상가보도 '폴타운' 실내 도보 (약 600m)","-","상점가 구경하며 평지로 안락하게 이동"],
+  [1,"17:00~18:00","스스기노 랜드마크 관광","스스기노 닛카상 (NIKKA)","폴타운 지하 스스기노역 3·4번 출구 바로 앞 사거리","-","닛카상 전광판 앞 가족 단체 사진. 인파 많으니 부모님 손 꼭 잡고 이동"],
+  [1,"18:00~19:30","저녁 식사 (양고기 반주)","징기스칸 다루마 4.4","스스기노 4번 출구에서 도보 3분 골목 안","현장 줄서기 약 40~50분 / 예약 불가","인당 약 3,500~4,500엔 / 웨이팅 시 동생 부부가 줄 서고 부모님은 메가돈키호테 구경"],
+  [1,"19:30~20:00","호텔 복귀","지하보도 '치카호'","스스기노 → 삿포로역 숙소 지하보도 도보 복귀 (약 1.4km)","-","다리 아파하실 경우 지하철 난보쿠선 2정거장 (인당 210엔) 대체 가능"],
+  [1,"20:00~","숙소 체크인 및 휴식","호텔 포르자 삿포로 스테이션","방 배정 및 체크인","-","편의점 야식 및 홋카이도 특산 우유·푸딩 시식으로 첫날 마무리"],
+  [2,"06:30~07:15","기상 및 아침 식사","호텔 객실 또는 삿포로역 편의점","호텔 바로 옆·삿포로역 내 편의점에서 샌드위치·주먹밥 등 구매","-","인당 약 500엔 / 07:20 투어 집결을 위해 간단히 해결"],
+  [2,"07:20~18:00","전일 비에이 버스 투어","비에이·후라노 일대","JR 삿포로역 북구 단체버스 승강장 07:20 정시 집결 및 출발","한국인 가이드 전용 버스 투어 예약 완료","중식비 인당 약 1,500~2,000엔 / 대형버스 이동. 목베개·생수 필수"],
+  [2,"11:00~12:30","투어 중 점심","비에이역 인근 로컬 식당 (준페이 등)","버스 투어 동선 중 하차하여 식사","투어사 연계 사전 예약 필수 (대기 없음)","인당 약 1,500~2,000엔 / 비에이 명물 에비동(새우튀김덮밥). 확정형 상품 선택 필수"],
+  [2,"18:00~18:30","호텔 복귀 및 정비","호텔 포르자 삿포로 스테이션","투어버스 삿포로역 북구 하차 → 도보 4분 숙소","-","부모님 허리·다리 휴식 및 옷 갈아입을 완충 시간 안배"],
+  [2,"18:30~20:30","저녁 식사 (야키토리)","야키토리 쿠시도리 (삿포로 역전점)","호텔에서 도보 3분 / 삿포로역 남구 방향 빌딩 지하 1층","웨이팅 약 15~20분 / 예약 불가","인당 약 2,500~3,500엔 / 금연석 분리 쾌적. 삿포로역 근처 동선 최적화"],
+  [2,"20:30~","일정 마감 및 휴식","호텔 포르자 삿포로 스테이션","식당 → 호텔 도보 3분 복귀","-","휴족시간 부착 및 조잔케이 온천 이동을 위한 짐 간소화 준비"],
+  [3,"08:00~09:15","호텔 조식 뷔페","호텔 포르자 3층 조식당","객실 → 엘리베이터 3층 (동선 없음)","투숙객 전용 / 대기 거의 없음","숙소 포함 또는 인당 약 2,000엔 / 홋카이도 신선 식재료 고품격 뷔페"],
+  [3,"09:15~09:30","버스 정류장 이동","삿포로역 남구 버스터미널","호텔 → 지하 연결통로 → 12번 버스 승강장 도보 4분","-","계단 없는 엘리베이터 동선 체크. 탑승 15분 전 미리 줄 서기"],
+  [3,"09:30~10:30","조잔케이 온천 이동","갓파 라이너 급행버스","12번 승강장 탑승 → 1시간 소요 → 호헤이쿄 온천 종점 하차","사전 예약 필수 (좌석 지정제)","왕복 인당 1,900엔 / 환승 없이 전석 좌석제. 멀미 없는 쾌적한 버스"],
+  [3,"10:30~13:00","100% 원탕 노천 온천욕","호헤이쿄 온천 (豊平峡温泉)","버스가 온천 바로 앞 하차 (도보 없음)","예약 필요 없음","인당 1,300엔 + 수건 대여 약 300엔 / 100% 천연 탄산수소염 원탕. 초대형 노천탕 힐링"],
+  [3,"13:00~14:00","온천 명물 점심","온센 식당 (건물 1층 내부)","이동 없음 (온천 건물 내부)","웨이팅 약 10~15분 / 예약 불가","인당 약 1,200~1,500엔 / 화덕에서 구운 거대 난(Naan)과 치킨 커리"],
+  [3,"14:15~15:15","삿포로역 복귀 이동","갓파 라이너 급행버스","호헤이쿄 온천 입구 앞 14:15 출발 → 1시간 → JR 삿포로역 남구","사전 예약 필수","왕복권 포함 / 온천 후 버스 안에서 부모님 꿀잠"],
+  [3,"15:30~16:30","삿포로역 최고층 관람","JR타워 T38 전망대","스텔라플레이스 센터 6층 전망대 전용 엘리베이터 탑승","예약 없음 / 현장 발권 가능","인당 740엔 / 38층 전망대 스카이뷰. 복귀 후 피로 최소화"],
+  [3,"16:30~17:30","스카이라운지 카페 티타임","T'Cafe (T38 전망대 내부)","전망대 내부 남측 유리창 구역","-","인당 약 600~800엔 / 소프트아이스크림·커피로 부모님 다리 피로 완화"],
+  [3,"17:30~18:00","라멘 미식","삿포로 라멘공화국 또는 스스기노 이치란","에스타 10층(라멘공화국) 또는 지하보도로 스스기노 이치란 이동 중 선택","웨이팅 약 20분 / 예약 불가","인당 약 1,000~1,200엔 / 삿포로 미소라멘 또는 이치란 돈코츠 취향껏 선택"],
+  [3,"18:00~18:30","호텔 복귀 및 정비","호텔 포르자 삿포로 스테이션","삿포로역 지하 통로 → 숙소 도보 4분","-","마지막 날 저녁 전 소지품 정비 및 편안한 신발·옷차림으로 변경"],
+  [3,"18:30~20:30","마지막 밤 저녁 (이자카야)","이자카야 아이요 (삿포로역 기타3조점)","호텔 → 치카호 방향 도보 4분 빌딩 안","예약 시 대기 없음 / 구글맵 온라인 예약 필수","인당 약 3,500~4,500엔 / 해산물 요리·고급 사케 반주. 사전 예약으로 대기 피로 제로"],
+  [3,"20:30~","여행 마무리 및 취침","호텔 포르자 삿포로 스테이션","숙소 도보 4분 복귀","-","가족과 맥주 한 잔. 다음 날 귀국 수하물 패킹"],
+  [4,"08:20~09:10","기상 및 최종 짐 점검","호텔 객실 및 로비","호텔 체크아웃 및 지하 통로 진입 준비","-","부모님 여권·항공권 위치 함께 최종 확인"],
+  [4,"09:10~09:26","역 이동 및 플랫폼 대기","호텔 → JR 삿포로역","캐리어 밀며 지하 통로로 무장애 동선 이동 (도보 4분 이내)","-","경사로·엘리베이터 완비. 부모님 무릎 무리 없이 기차역 안착"],
+  [4,"09:26~10:03","공항 귀국 이동","JR 쾌속 에어포트","JR 삿포로역 09:26 출발 → 신치토세공항역 10:03 도착 (37분)","지정석(U시트) 사전 예매 필수","인당 1,990엔 / 마지막 날 혼잡 대비 U시트 100% 확보"],
+  [4,"10:05~12:10","귀국 수속 및 면세점 쇼핑","신치토세 공항 국제선 터미널","출국장 탑승 수속 후 면세구역 진입","-","시로이코이비토·롯카테이 버터샌드 쇼핑 가이드 및 라운지 휴식"],
+  [4,"12:10~15:05","귀국 비행기 탑승","신치토세 출발 → 인천 도착","12:10 이륙 → 15:05 인천 국제공항 도착","-","기내 건조 대비 인공눈물·마스크 제공 권장"],
+];
+const dayLabel=["","1일차 6/25 목","2일차 6/26 금","3일차 6/27 토","4일차 6/28 일"];
+const dayBadge=["","b1","b2","b3","b4"];
+const dayRow=["","d1","d2","d3","d4"];
+const tbody=document.getElementById('tbody');
+let prevDay=0;
+rows.forEach(r=>{
+  const [d,time,sch,loc,route,wait,cost]=r;
+  const tr=document.createElement('tr');
+  tr.className=dayRow[d];
+  const dayCell=prevDay!==d?`<span class="day-badge ${dayBadge[d]}">${dayLabel[d]}</span>`:'';
+  prevDay=d;
+  tr.innerHTML=`
+    <td>${dayCell}</td>
+    <td class="time">${time}</td>
+    <td><div class="sch">${sch}</div></td>
+    <td class="loc">${loc}</td>
+    <td class="detail">${route}</td>
+    <td class="${wait==='-'?'wait-no':'wait-yes'}">${wait}</td>
+    <td class="care">${cost}</td>
+  `;
+  tbody.appendChild(tr);
+});
+</script>
