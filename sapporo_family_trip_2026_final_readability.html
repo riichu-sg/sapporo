@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 삿포로 가족여행 일정표</title>
+<style>
+:root {
+  --header:#203864;
+  --title:#1F4E78;
+  --d1:#FFF2CC;
+  --d2:#DDEBF7;
+  --d3:#E2F0D9;
+  --d4:#FCE4D6;
+  --border:#cfd6df;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; padding:18px; color:#1f2937;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;
+  background:#f4f7fb;
+}
+.wrap { max-width:1900px; margin:0 auto; }
+h1 {
+  margin:0; padding:18px 20px; text-align:center;
+  color:white; background:var(--title); border-radius:12px 12px 0 0;
+  font-size:clamp(20px,2.4vw,34px);
+}
+.note {
+  padding:10px 14px; text-align:center; background:#d9eaf7;
+  border:1px solid var(--border); border-top:0; font-size:14px;
+}
+.legend {
+  display:flex; gap:8px; flex-wrap:wrap; padding:12px 0;
+}
+.badge { padding:7px 12px; border-radius:999px; font-weight:700; border:1px solid var(--border); }
+.badge.d1 { background:var(--d1); } .badge.d2 { background:var(--d2); }
+.badge.d3 { background:var(--d3); } .badge.d4 { background:var(--d4); }
+.table-box {
+  overflow:auto; max-height:78vh; background:white; border:1px solid var(--border);
+  border-radius:10px; box-shadow:0 8px 24px rgba(31,78,120,.08);
+}
+table {
+  border-collapse:separate; border-spacing:0; width:100%; min-width:1750px;
+  font-size:13px; line-height:1.5;
+}
+th, td {
+  border-right:1px solid var(--border); border-bottom:1px solid var(--border);
+  padding:11px 12px; vertical-align:top; white-space:normal;
+}
+th {
+  position:sticky; top:0; z-index:5; background:var(--header); color:white;
+  text-align:center; font-weight:800;
+}
+th:first-child, td:first-child {
+  position:sticky; left:0; z-index:4; font-weight:800; text-align:center;
+  min-width:135px; max-width:135px;
+}
+th:first-child { z-index:6; background:var(--header); }
+td:nth-child(2), td:nth-child(3) { text-align:center; }
+tr.day1 td { background:var(--d1); }
+tr.day2 td { background:var(--d2); }
+tr.day3 td { background:var(--d3); }
+tr.day4 td { background:var(--d4); }
+tr.day1 td:first-child { background:#BF9000; color:white; }
+tr.day2 td:first-child { background:#2F75B5; color:white; }
+tr.day3 td:first-child { background:#548235; color:white; }
+tr.day4 td:first-child { background:#C55A11; color:white; }
+tbody tr:hover td { filter:brightness(.97); }
+@media (max-width: 768px) {
+  body { padding:8px; }
+  h1 { border-radius:8px 8px 0 0; padding:14px 10px; }
+  .note { font-size:12px; }
+  .legend { gap:5px; padding:8px 0; }
+  .badge { padding:5px 8px; font-size:12px; }
+  .table-box { max-height:82vh; border-radius:7px; }
+  table { font-size:12px; min-width:1550px; }
+  th, td { padding:8px 9px; }
+  th:first-child, td:first-child { min-width:115px; max-width:115px; }
+}
+@media print {
+  body { background:white; padding:0; }
+  .table-box { max-height:none; overflow:visible; box-shadow:none; }
+  th, td:first-child { position:static; }
+  table { font-size:9px; min-width:0; }
+}
+
+.type-badge {
+  display:inline-block;
+  min-width:48px;
+  padding:4px 10px;
+  border-radius:999px;
+  text-align:center;
+  font-weight:800;
+  border:1px solid;
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,.08);
+}
+.type-move { background:#D9EAF7; color:#1F4E78; border-color:#5B9BD5; }
+.type-tour { background:#E2F0D9; color:#375623; border-color:#70AD47; }
+.type-meal { background:#FCE4D6; color:#9C5700; border-color:#ED7D31; }
+.type-rest { background:#E4DFEC; color:#7030A0; border-color:#8064A2; }
+
+
+/* 장소/맛집 강조 */
+td:nth-child(5) {
+  font-weight: 800;
+  color: #17365D;
+  letter-spacing: -0.1px;
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>2026 삿포로 가족여행 상세 일정표</h1>
+  <div class="note">6월 25일(목) ~ 6월 28일(일) · 일자별 배경색 · 헤더와 날짜 열 고정 · 가로 스크롤 지원</div>
+  <div class="legend">
+    <span class="badge d1">1일차 · 6/25 목</span>
+    <span class="badge d2">2일차 · 6/26 금</span>
+    <span class="badge d3">3일차 · 6/27 토</span>
+    <span class="badge d4">4일차 · 6/28 일</span>
+  </div>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>날짜</th><th>시간</th><th>구분</th><th>일정</th><th>장소/맛집</th><th>상세 이동 루트 및 대중교통 정보</th><th>웨이팅 및 예약 정보</th><th>인당 예상 비용 &amp; 부모님 케어 포인트</th><th>동선 일치 대체 후보지 (식사 시간대 전용)</th></tr></thead>
+      <tbody><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>08:20~11:00</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>인천 출발 / 공항 도착</td><td data-label='장소/맛집'>인천공항 -&gt; 신치토세 공항</td><td data-label='상세 이동 루트 및 대중교통 정보'>비행기 탑승 및 입국 수속</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 450,000원 (항공권별 상이) / 부모님 여권 및 기내 액체류 사전 점검</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>11:00~12:09</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>입국 수속 및 대기</td><td data-label='장소/맛집'>신치토세 공항</td><td data-label='상세 이동 루트 및 대중교통 정보'>국내선 터미널 이동 및 JR 인포메이션 데스크로 이동</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>JR 쾌속 에어포트 지정석(U시트)을 이때 미리 실물 티켓으로 발권하면 편리함</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>12:09~12:46</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>삿포로역 이동</td><td data-label='장소/맛집'>JR 쾌속 에어포트 탑승</td><td data-label='상세 이동 루트 및 대중교통 정보'>신치토세공항역 지하 1층에서 탑승 -&gt; 환승 없이 37분 소요 -&gt; JR 삿포로역 하차</td><td data-label='웨이팅 및 예약 정보'>지정석(U시트) 사전 예매 필수</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 1,990엔 (U시트 지정석 포함) / 부모님이 캐리어를 들고 서서 가지 않도록 100% 좌석 보증</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>12:50~13:00</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>숙소 이동 및 짐 보관</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>JR 삿포로역 남구(South Exit)에서 지상 도보 4분 또는 지하 연결통로 이용</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>이동거리 최소화 / 호텔 체크인 전 캐리어와 무거운 짐을 리셉션에 먼저 맡기고 가벼운 몸으로 이동</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>13:10~14:30</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>늦은 점심 식사<br>(돈카츠)</td><td data-label='장소/맛집'>돈카츠 타마후지 (삿포로역점)</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔에서 삿포로역 남구 지하 연결통로(에스타 빌딩 방향) 도보 4분 위치</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 약 25분 / [예약] 불가</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 2,000엔~2,500엔 / 바삭하고 부드러운 흑돼지 돈카츠와 솥밥 제공. 대기 시 역내 의자 활용하여 부모님 휴식 유도</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 돈카츠 마이센 삿포로 다이마루점 (삿포로역 연결 다이마루 백화점 8층 식당가 / 도보 3분 / 웨이팅 15분)<br><br>[후보2] 카츠텐 삿포로역 아피아점 (삿포로역 지하 상가 아피아 위치 / 가성비 극상 믹스카츠동 전문점 / 도보 3분 / 웨이팅 10분)</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>14:30~15:30</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>도심 관광<br>(걸어서 이동)</td><td data-label='장소/맛집'>삿포로 지하보도 &#x27;치카호&#x27;</td><td data-label='상세 이동 루트 및 대중교통 정보'>삿포로역에서 오도리공원 방면으로 완벽하게 수평 연결된 실내 지하 연결보도를 따라 도보 이동 (약 500m)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>눈비·바람·차량 소음이 완벽히 차단된 쾌적한 평지보도. 부모님과 삿포로 로컬 분위기를 만끽하며 천천히 걷기 최적</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>15:30~16:30</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>오도리공원 &amp; TV타워 관광</td><td data-label='장소/맛집'>오도리공원 및 삿포로 TV타워</td><td data-label='상세 이동 루트 및 대중교통 정보'>지하보도에서 오도리역 2번 출구로 연결. 공원 분수대 산책 후 TV타워 전망대 엘리베이터 이동</td><td data-label='웨이팅 및 예약 정보'>[TV타워] 웨이팅 거의 없음 / 예약 가능</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 1,000엔 (TV타워 입장료) / 초여름 오도리공원의 싱그러운 풍경을 감상하고 TV타워 엘리베이터로 무릎 무리 없이 전망대 안착</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>16:30~17:00</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>스스기노 이동<br>(걸어서 이동)</td><td data-label='장소/맛집'>지하보도 &#x27;폴타운&#x27;</td><td data-label='상세 이동 루트 및 대중교통 정보'>오도리공원에서 스스기노역까지 이어지는 지하 상가보도 &#x27;폴타운&#x27;을 통해 실내로 도보 이동 (약 600m)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>1km 안팎의 거리이므로 대중교통 환승 대기 피로 없이, 상점가를 구경하며 평지로 안락하게 이동</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>17:00~18:00</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>스스기노 랜드마크 관광</td><td data-label='장소/맛집'>스스기노 닛카상 (NIKKA)</td><td data-label='상세 이동 루트 및 대중교통 정보'>폴타운 지하에서 스스기노역 3번 또는 4번 출구로 나와 바로 앞 사거리 위치</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>삿포로의 상징인 닛카상 전광판 앞에서 가족 단체 사진 촬영. 인파가 많으므로 부모님 손을 꼭 잡고 이동</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>18:00~19:30</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>저녁 식사<br>(양고기 반주)</td><td data-label='장소/맛집'>징기스칸 다루마 4.4</td><td data-label='상세 이동 루트 및 대중교통 정보'>스스기노 4번 출구에서 도보 3분 골목 안 위치</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 현장 줄서기 약 40~50분 / [예약] 불가</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 3,500엔~4,500엔 / 삿포로 최고 인기 양고기 구이와 생맥주 반주. 웨이팅이 길 시 동생 부부가 먼저 줄을 서고 부모님은 인근 메가돈키호테 실내 구경 권장</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 징기스칸 라무 (스스기노역 도보 4분 / 다루마 대비 좌석이 넓고 쾌적하여 5인 가족이 앉기 수월함 / 웨이팅 20분)<br><br>[후보2] 스스기노 징기스칸 고조엔 (스스기노역 도보 5분 / 현지인 비율 90% 가성비 최고 생양고기 노포 / 웨이팅 30분)</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>19:30~20:00</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>호텔 복귀<br>(걸어서 이동)</td><td data-label='장소/맛집'>지하보도 &#x27;치카호&#x27;</td><td data-label='상세 이동 루트 및 대중교통 정보'>스스기노에서 삿포로역 숙소까지 지하보도(폴타운+치카호)를 통해 소화 시킬 겸 천천히 도보 복귀 (약 1.4km)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>부모님이 다리 아파하실 경우 스스기노역에서 지하철 난보쿠선(그린라인)을 타고 2정거장 뒤 삿포로역 하차로 즉시 대체 가능(인당 210엔)</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day1'><td data-label='날짜'>1일차(6/25 목)</td><td data-label='시간'>20:00~</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>숙소 체크인 및 휴식</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>방 배정 및 체크인 완료 후 객실 휴식</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>편의점(세븐일레븐/로손) 야식 및 홋카이도 특산 우유·푸딩 시식으로 기분 좋은 첫날 마무리</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>06:30~07:15</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>기상 및 간단한 아침 식사</td><td data-label='장소/맛집'>호텔 객실 또는 삿포로역 편의점</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔 바로 옆 또는 삿포로역 내부 편의점에서 샌드위치·주먹밥 등 구매</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 500엔 / 07:20 투어 집결을 위해 객실에서 빠르게 먹을 수 있는 간단한 간식류로 구성</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 세븐일레븐 삿포로역 북구점 (호텔 도보 1분 / 홋카이도 한정 샌드위치 및 멜론빵 추천)<br><br>[후보2] 미스터도넛 삿포로역 아피아점 (삿포로역 지하 / 07:00 조기 오픈 / 도보 3분 / 포장 최적)</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>07:20~18:00</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>전일 비에이 버스 투어</td><td data-label='장소/맛집'>비에이,후라노 일대</td><td data-label='상세 이동 루트 및 대중교통 정보'>JR 삿포로역 북구(North Exit) 단체 버스 승강장 07:20까지 정시 집결 및 출발</td><td data-label='웨이팅 및 예약 정보'>한국인 가이드 전용 버스 투어 (예약 완료)</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>투어 예약비 제외 현지 중식비 인당 약 1,500엔~2,000엔 / 대형버스로 이동하므로 대중교통 걱정 제로. 긴 이동시간 대비 목베개 및 생수 필수 준비</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>11:00~12:30</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>투어 중 점심 식사</td><td data-label='장소/맛집'>비에이역 인근 로컬 식당 (준페이 등)</td><td data-label='상세 이동 루트 및 대중교통 정보'>버스 투어 동선 중 하차하여 식사 진행</td><td data-label='웨이팅 및 예약 정보'>[준페이] 투어사 연계 사전 예약 필수 (대기 없음)</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 1,500엔~2,000엔 / 비에이 명물 에비동(새우튀김덮밥) 시식. 투어 예약 시 준페이 확정형 상품을 선택하는 것이 부모님 웨이팅 방지에 필수</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>18:00~18:30</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>호텔 복귀 및 개인 정비</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>투어 버스가 삿포로역 북구에 하차 -&gt; 도보 4분 거리 숙소로 이동하여 30분간 누워서 휴식</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>하루 종일 버스를 타서 찌푸둥해진 부모님의 허리와 다리를 풀고 옷을 갈아입을 수 있는 완충 시간 안배</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>18:30~20:30</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>저녁 식사<br>(야키토리 반주)</td><td data-label='장소/맛집'>야키토리 쿠시도리 (삿포로 역전점)</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔에서 도보 3분 거리. 삿포로역 남구 방향 빌딩 지하 1층 위치 (날씨 무관)</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 약 15~20분 / [예약] 캐치테이블 불가·현장 줄서기</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 2,500엔~3,500엔 / 가성비 최고의 삿포로 로컬 꼬치구이 체인. 삿포로역 바로 근처라 동선 최적화. 연기가 적고 금연석이 잘 분리된 매장으로 쾌적함</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 이자카야 앗초코초 삿포로역점 (호텔 도보 3분 / 삿포로역 감성 선술집, 신선한 모둠회와 나베 요리 / 구글맵 예약 가능)<br><br>[후보2] 덴푸라 가고메 삿포로역 아피아점 (삿포로역 지하 / 주문 즉시 튀겨주는 바삭한 튀김 정식과 시원한 생맥주 반주 / 웨이팅 15분)</td></tr><tr class='day2'><td data-label='날짜'>2일차(6/26 금)</td><td data-label='시간'>20:30~</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>일정 마감 및 휴식</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>식당에서 호텔까지 도보 3분 복귀</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>부모님의 발바닥 피로 해소를 위해 휴족시간 부착 및 조잔케이 온천 이동을 위한 짐 간소화 준비</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>08:00~09:15</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>호텔 조식 뷔페</td><td data-label='장소/맛집'>호텔 포르자 3층 조식당</td><td data-label='상세 이동 루트 및 대중교통 정보'>객실에서 엘리베이터로 3층 조식당 이동 (동선 없음)</td><td data-label='웨이팅 및 예약 정보'>투숙객 전용 (대기 거의 없음)</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>숙소 포함 또는 인당 약 2,000엔 / 아침에 나갈 필요 없이 홋카이도 신선 식재료(연어·우유·수프 카레 등)로 구성된 고품격 뷔페로 든든하게 해장 겸 식사</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 호텔 내 조식 단일 진행 (부모님 피로 방지를 위해 아침 식사는 숙소 내부 조식당 고정 이용을 강력 권장함)<br><br>[후보2] 동일함</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>09:15~09:30</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>버스 정류장 이동</td><td data-label='장소/맛집'>삿포로역 남구 버스터미널</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔에서 지하 연결통로를 통해 삿포로역 남구 12번 버스 승강장으로 도보 이동 (도보 4분)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>계단이 없는 엘리베이터 동선 체크. 탑승 15분 전 미리 줄을 서서 대기</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>09:30~10:30</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>조잔케이 온천 이동</td><td data-label='장소/맛집'>갓파 라이너 급행 버스</td><td data-label='상세 이동 루트 및 대중교통 정보'>12번 승강장에서 조잔케이행 갓파 라이너 직행버스 탑승 -&gt; 정확히 1시간 소요 -&gt; 호헤이쿄 온천 종점 하차</td><td data-label='웨이팅 및 예약 정보'>사전 예약 필수 (좌석 지정제)</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>왕복 버스 비용 인당 1,900엔 (또는 온천 패키지권 활용) / 환승 없이 한 번에 가며 멀미가 없는 쾌적한 전석 좌석제 버스</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>10:30~13:00</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>100% 원탕 노천 온천욕</td><td data-label='장소/맛집'>호헤이쿄 온천 (豊平峡温泉)</td><td data-label='상세 이동 루트 및 대중교통 정보'>버스가 온천 바로 앞에 하차하므로 도보 이동 없음</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 없음 / [예약] 필요 없음</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 1,300엔 (입욕료) + 수건 대여비 약 300엔 / 가열이나 가수 없는 100% 탄산수소염 천연 원탕. 최대 200명 입욕 가능한 초대형 노천탕에서 부모님께 최고의 힐링 선사</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>13:00~14:00</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>온천 명물 점심 식사</td><td data-label='장소/맛집'>온센 식당 (ONSEN_SHOKUDO)</td><td data-label='상세 이동 루트 및 대중교통 정보'>호헤이쿄 온천 건물 1층 내부 위치 (이동 없음)</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 약 10~15분 / [예약] 불가</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 1,200엔~1,500엔 / 네팔 장인들이 화덕에서 직접 구워내는 거대하고 쫀득한 정통 난(Naan)과 치킨 커리. 온천 후 즐기는 이색 가성비 미식</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 온천 내 소바 처 (온센식당 내 일식 파트 / 홋카이도산 메밀로 만든 시원한 주주 소바 / 이동 거리 0분 / 웨이팅 10분)<br><br>[후보2] 조잔케이 온천 만쥬 명가 (온천욕 후 즐기는 달콤한 팥 만쥬와 우유 간식 대안 / 도보 이동 없음)</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>14:15~15:15</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>삿포로역 복귀 이동</td><td data-label='장소/맛집'>갓파 라이너 급행 버스</td><td data-label='상세 이동 루트 및 대중교통 정보'>호헤이쿄 온천 입구 앞 정류장에서 14:15 출발 버스 탑승 -&gt; 정확히 1시간 소요 -&gt; JR 삿포로역 남구 복귀</td><td data-label='웨이팅 및 예약 정보'>사전 예약 필수 (좌석 지정제)</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>교통비 왕복권에 포함 / 온천욕 직후라 부모님이 버스 안에서 꿀맛 같은 낮잠을 잘 수 있도록 배려</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>15:30~16:30</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>삿포로역 최고층 관람</td><td data-label='장소/맛집'>JR타워 T38 전망대</td><td data-label='상세 이동 루트 및 대중교통 정보'>JR 삿포로역과 연결된 스텔라플레이스 센터 6층에서 전망대 전용 엘리베이터 탑승</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 없음 / [예약] 현장 발권 가능</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 740엔 / 삿포로 시내가 한눈에 내려다보이는 38층 전망대. 복귀 후 피로를 최소화하며 즐기는 안락한 스카이뷰 관람</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>16:30~17:30</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>스카이라운지 카페 티타임</td><td data-label='장소/맛집'>T&#x27;Cafe (T38 전망대 내부)</td><td data-label='상세 이동 루트 및 대중교통 정보'>전망대 내부 남측 전면 유리창 구역 위치</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 600엔~800엔 / 전망대 카페에서 홋카이도 특산 소프트아이스크림과 따뜻한 커피를 마시며 부모님 다리 피로 완벽 완화</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>17:30~18:00</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>오후 라멘 미식<br>(라멘 필수 조건)</td><td data-label='장소/맛집'>삿포로 라멘공화국 또는 스스기노 이치란 라멘</td><td data-label='상세 이동 루트 및 대중교통 정보'>삿포로역 에스타 건물 10층(라멘공화국) 또는 지하보도로 스스기노 이치란 이동 중 선택</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 약 20분 / [예약] 불가</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 1,000엔~1,200엔 / 출출해진 오후 시간에 즐기는 삿포로 대표 미소라멘 또는 호불호 없는 정통 이치란 돈코츠 라멘 취향껏 선택</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 미소라멘 전문 &#x27;시라카바 산소&#x27; (삿포로역 10층 라멘 스트리트 내부 / 매운 미소라멘과 삶은 달걀 무한리필 / 도보 3분 / 웨이팅 15분)<br><br>[후보2] 삿포로역 잇핀 (삿포로역 스텔라플레이스 6층 / 부드러운 숯불 돼지고기 덮밥과 따뜻한 장국 장인 맛집 / 도보 3분 / 웨이팅 20분)</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>18:00~18:30</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>호텔 복귀 및 개인 정비</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>삿포로역 지하 통로를 통해 숙소로 복귀 (도보 4분)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>마지막 날 저녁 식사 전 소지품 정비 및 편안한 신발/옷차림으로 변경</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>18:30~20:30</td><td data-label='구분'><span class='type-badge type-meal'>식사</span></td><td data-label='일정'>마지막 밤 저녁 식사<br>(이자카야)</td><td data-label='장소/맛집'>이자카야 아이요 (삿포로역 기타3조점)</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔에서 삿포로역 남구 지하 통로 치카호 방향으로 도보 4분 빌딩 안 위치</td><td data-label='웨이팅 및 예약 정보'>[웨이팅] 예약 시 없음 / [예약] 구글맵 온라인 예약 필수</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 약 3,500엔~4,500엔 / 활기찬 로컬 분위기에서 홋카이도 임연수어 구이·가리비 버터구이·자자멘 등 다양한 해산물 요리와 고급 사케 반주. 사전 예약으로 대기 피로 제로</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>[후보1] 이자카야 키타노쇼 삿포로역점 (호텔 도보 4분 / 완전 개별룸 다다미석 완비로 부모님이 대단히 조용하고 고급스럽게 반주 가능 / 구글맵 예약 권장)<br><br>[후보2] 미야노모리 프란세스 이자카야 삿포로역전점 (호텔 도보 3분 / 홋카이도산 신선육과 해산물 화로구이 가성비 전문점 / 구글맵 예약 가능)</td></tr><tr class='day3'><td data-label='날짜'>3일차(6/27 토)</td><td data-label='시간'>20:30~</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>여행 마무리 및 취침</td><td data-label='장소/맛집'>호텔 포르자 삿포로 스테이션</td><td data-label='상세 이동 루트 및 대중교통 정보'>숙소 도보 4분 복귀</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>가족들과 맥주 한 잔 나누며 3일간의 추억 공유 및 다음 날 귀국 수하물 패킹</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day4'><td data-label='날짜'>4일차(6/28 일)</td><td data-label='시간'>08:20~09:10</td><td data-label='구분'><span class='type-badge type-rest'>휴식</span></td><td data-label='일정'>기상 및 최종 짐 점검</td><td data-label='장소/맛집'>호텔 객실 및 로비</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔 체크아웃 절차 진행 및 지하 통로 진입 준비</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 소요 경비 없음 / 부모님이 당황하지 않으시게 여권과 항공권 위치를 마지막으로 함께 확인</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day4'><td data-label='날짜'>4일차(6/28 일)</td><td data-label='시간'>09:10~09:26</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>역 이동 및 플랫폼 대기</td><td data-label='장소/맛집'>호텔 -&gt; JR 삿포로역</td><td data-label='상세 이동 루트 및 대중교통 정보'>호텔 포르자에서 지하 통로를 통해 캐리어를 밀며 무장애 동선으로 이동 (도보 4분 이내)</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>이동 통로에 경사로나 엘리베이터가 완비되어 있어 부모님께서 무릎에 무리 없이 기차역 안착 가능</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day4'><td data-label='날짜'>4일차(6/28 일)</td><td data-label='시간'>09:26~10:03</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>공항 귀국 이동</td><td data-label='장소/맛집'>JR 쾌속 에어포트 탑승</td><td data-label='상세 이동 루트 및 대중교통 정보'>JR 삿포로역에서 09:26 정시 출발 열차 탑승 -&gt; 신치토세공항역 10:03 도착 (37분 소요)</td><td data-label='웨이팅 및 예약 정보'>지정석(U시트) 사전 예매 필수</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>인당 1,990엔 (U시트 지정석 비용) / 마지막 날 공항으로 가는 승객이 매우 많으므로 부모님이 서서 가지 않도록 U시트 100% 확보</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day4'><td data-label='날짜'>4일차(6/28 일)</td><td data-label='시간'>10:05~12:10</td><td data-label='구분'><span class='type-badge type-tour'>관광</span></td><td data-label='일정'>귀국 수속 및 면세점 쇼핑</td><td data-label='장소/맛집'>신치토세 공항 국제선 터미널</td><td data-label='상세 이동 루트 및 대중교통 정보'>출국장 탑승 수속 완료 후 면세구역 진입</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>공항 면세점에서 부모님 지인 선물용 &#x27;시로이코이비토&#x27;, &#x27;롯카테이 버터샌드&#x27; 쇼핑 가이드 및 패밀리 라운지 휴식</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr><tr class='day4'><td data-label='날짜'>4일차(6/28 일)</td><td data-label='시간'>12:10~15:05</td><td data-label='구분'><span class='type-badge type-move'>이동</span></td><td data-label='일정'>귀국 비행기 탑승</td><td data-label='장소/맛집'>신치토세 출발 -&gt; 인천 도착</td><td data-label='상세 이동 루트 및 대중교통 정보'>12:10 비행기 정시 이륙 -&gt; 15:05 인천 국제공항 터미널 안착</td><td data-label='웨이팅 및 예약 정보'>-</td><td data-label='인당 예상 비용 &amp; 부모님 케어 포인트'>기내가 건조하므로 부모님께 인공눈물이나 가벼운 마스크 제공 권장</td><td data-label='동선 일치 대체 후보지 (식사 시간대 전용)'>-</td></tr></tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
